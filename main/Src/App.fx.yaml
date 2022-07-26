@@ -1,0 +1,50 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |
+        =Set(
+            tabSelected,
+            "Dashboard"
+        );
+        ClearCollect(
+            colChoices,
+            {ViewName: "Shown As"},
+            {ViewName: "By Contract"},
+            {ViewName: "By Product"},
+            {ViewName: "By Serial No"}
+        );
+        ClearCollect(
+            colExpire,
+            {ViewName: "All Contracts"},
+            {ViewName: "3 Months"},
+            {ViewName: "4 Months"}
+        );
+        ClearCollect(
+            status,
+            {ViewName: "Status"},
+            {ViewName: "Nearly Expired"},
+            {ViewName: "Expired"},
+            {ViewName: "Others"}
+        );
+        ClearCollect(
+            Expire,   
+            {ViewName: 1},
+            {ViewName: 2},
+            {ViewName: 3},
+            {ViewName: 4},
+            {ViewName: 5},
+            {ViewName: 6},
+            {ViewName: 7},
+            {ViewName: 8},
+            {ViewName: 9},
+            {ViewName: 10},
+            {ViewName: 11},
+            {ViewName: 12}
+        );
+        ClearCollect(
+            UserViews,
+            {ViewName: "All Users"},
+            {ViewName: "Admin Users"},
+            {ViewName: "Data Entry Users"},
+            {ViewName: "Report Users"}
+        );
+
