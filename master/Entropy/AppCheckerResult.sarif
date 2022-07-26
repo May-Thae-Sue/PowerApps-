@@ -64,7 +64,7 @@
                 },
                 "region": {
                   "charLength": 6,
-                  "charOffset": 129,
+                  "charOffset": 135,
                   "snippet": {
                     "text": ".Value"
                   }
@@ -103,10 +103,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 83,
-                  "charOffset": 97,
+                  "charLength": 86,
+                  "charOffset": 102,
                   "snippet": {
-                    "text": "StartsWith(\n            Customer.Value,\n            'Search Txt 2_1'.Text\n        )"
+                    "text": "StartsWith(\r\n            Customer.Value,\r\n            'Search Txt 2_1'.Text\r\n        )"
                   }
                 }
               },
@@ -144,47 +144,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 181,
-                  "snippet": {
-                    "text": "||"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Inventory Home Screen",
-                "type": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.'Contracts Main_1'.'Devices Body_1'.'Contract List Container_1'.'Contract Gal on Contracts Page_1'"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.'Contracts Main_1'.'Devices Body_1'.'Contract List Container_1'.'Contract Gal on Contracts Page_1'.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.'Contracts Main_1'.'Devices Body_1'.'Contract List Container_1'.'Contract Gal on Contracts Page_1'.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 264,
+                  "charOffset": 189,
                   "snippet": {
                     "text": "||"
                   }
@@ -224,7 +184,47 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 456,
+                  "charOffset": 275,
+                  "snippet": {
+                    "text": "||"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Inventory Home Screen",
+                "type": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.'Contracts Main_1'.'Devices Body_1'.'Contract List Container_1'.'Contract Gal on Contracts Page_1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.'Contracts Main_1'.'Devices Body_1'.'Contract List Container_1'.'Contract Gal on Contracts Page_1'.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.'Contracts Main_1'.'Devices Body_1'.'Contract List Container_1'.'Contract Gal on Contracts Page_1'.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 479,
                   "snippet": {
                     "text": "in"
                   }
@@ -264,7 +264,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 499,
+                  "charOffset": 522,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1664,7 +1664,7 @@
                 },
                 "region": {
                   "charLength": 6,
-                  "charOffset": 98,
+                  "charOffset": 102,
                   "snippet": {
                     "text": ".Value"
                   }
@@ -1704,7 +1704,7 @@
                 },
                 "region": {
                   "charLength": 39,
-                  "charOffset": 74,
+                  "charOffset": 78,
                   "snippet": {
                     "text": "StartsWith('Customer ID'.Value,f1.Text)"
                   }
@@ -1744,7 +1744,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 114,
+                  "charOffset": 118,
                   "snippet": {
                     "text": "||"
                   }
@@ -1784,7 +1784,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 157,
+                  "charOffset": 161,
                   "snippet": {
                     "text": "||"
                   }
@@ -1824,7 +1824,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 199,
+                  "charOffset": 203,
                   "snippet": {
                     "text": "||"
                   }
@@ -1864,7 +1864,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 303,
+                  "charOffset": 310,
                   "snippet": {
                     "text": "in"
                   }
@@ -1904,7 +1904,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 333,
+                  "charOffset": 340,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1944,7 +1944,7 @@
                 },
                 "region": {
                   "charLength": 6,
-                  "charOffset": 89,
+                  "charOffset": 93,
                   "snippet": {
                     "text": ".Value"
                   }
@@ -1984,7 +1984,7 @@
                 },
                 "region": {
                   "charLength": 39,
-                  "charOffset": 65,
+                  "charOffset": 69,
                   "snippet": {
                     "text": "StartsWith('Customer ID'.Value,f1.Text)"
                   }
@@ -2024,7 +2024,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 105,
+                  "charOffset": 109,
                   "snippet": {
                     "text": "||"
                   }
@@ -2064,7 +2064,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 148,
+                  "charOffset": 152,
                   "snippet": {
                     "text": "||"
                   }
@@ -2104,7 +2104,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 189,
+                  "charOffset": 193,
                   "snippet": {
                     "text": "||"
                   }
@@ -2144,7 +2144,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 280,
+                  "charOffset": 287,
                   "snippet": {
                     "text": "in"
                   }
@@ -2184,7 +2184,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 310,
+                  "charOffset": 317,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2224,7 +2224,7 @@
                 },
                 "region": {
                   "charLength": 6,
-                  "charOffset": 246,
+                  "charOffset": 251,
                   "snippet": {
                     "text": ".Value"
                   }
@@ -2263,128 +2263,128 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 69,
+                  "charLength": 72,
+                  "charOffset": 218,
+                  "snippet": {
+                    "text": "StartsWith(\r\n            Customer.Value,\r\n            f1.Text\r\n        )"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Inventory Home Screen",
+                "type": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 291,
+                  "snippet": {
+                    "text": "||"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Inventory Home Screen",
+                "type": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 363,
+                  "snippet": {
+                    "text": "||"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Inventory Home Screen",
+                "type": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
                   "charOffset": 214,
-                  "snippet": {
-                    "text": "StartsWith(\n            Customer.Value,\n            f1.Text\n        )"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Inventory Home Screen",
-                "type": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 284,
-                  "snippet": {
-                    "text": "||"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Inventory Home Screen",
-                "type": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 353,
-                  "snippet": {
-                    "text": "||"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Inventory Home Screen",
-                "type": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Inventory Home Screen'.'Right Nav-Main container_1'.'Main Container_1'.New_Dashboard.Gallery7.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 210,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2424,7 +2424,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 481,
+                  "charOffset": 498,
                   "snippet": {
                     "text": "in"
                   }
@@ -2464,7 +2464,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 512,
+                  "charOffset": 529,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2504,7 +2504,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 656,
+                  "charOffset": 673,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2784,7 +2784,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 180,
+                  "charOffset": 184,
                   "snippet": {
                     "text": "in"
                   }
@@ -2824,7 +2824,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 696,
+                  "charOffset": 715,
                   "snippet": {
                     "text": "in"
                   }

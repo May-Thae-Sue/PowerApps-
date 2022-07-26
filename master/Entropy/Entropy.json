@@ -567,7 +567,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "07/26/2022 03:24:06",
+  "HeaderLastSavedDateTimeUTC": "07/26/2022 03:42:08",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "043d8438-3525-4d2f-9a2e-b05355d36292": "\"/providers/microsoft.powerapps/apis/shared_office365users/connections/shared-office365user-ac6cc265-c485-41e5-b7b7-f541bf495cb9\"",
@@ -585,9 +585,9 @@
     "nex4 signature": "2ea81994-6b71-4a88-979b-166e27db8a3e.png"
   },
   "LocalResourceRootPaths": {
-    "MicrosoftTeams-image": "https://docserverpwaprodeas.blob.core.windows.net/14be26b8-dd25-4e05-9ec9-e834b7101413-1/resource/Assets0Images09943c376-0ae0-4e27-8e47-25a6be6ef142.png?sv=2017-04-17&sr=b&sig=hBiQ3P0Ey0029HWir8Vi111N0PEITd8Jmqf7Q5GfVaY%3D&spr=https&se=2022-07-27T03%3A23%3A05Z&sp=r",
-    "nex4 logo": "https://docserverpwaprodeas.blob.core.windows.net/14be26b8-dd25-4e05-9ec9-e834b7101413-1/resource/Assets0Images072146d53-e2aa-4669-b27b-341e334257cd.png?sv=2017-04-17&sr=b&sig=f1nA231Jw6OMDaMrG31D1nWtFqRJRbqbN1U4RqFrtZU%3D&spr=https&se=2022-07-27T03%3A23%3A05Z&sp=r",
-    "nex4 signature": "https://docserverpwaprodeas.blob.core.windows.net/14be26b8-dd25-4e05-9ec9-e834b7101413-1/resource/Assets0Images02ea81994-6b71-4a88-979b-166e27db8a3e.png?sv=2017-04-17&sr=b&sig=mxW3eCIEEAJ6VLWkldZbsrXEfnxYFbfZOIq5iBLZrB4%3D&spr=https&se=2022-07-27T03%3A23%3A05Z&sp=r"
+    "MicrosoftTeams-image": "https://docserverpwaprodeas.blob.core.windows.net/5d462452-fa05-4b53-b2ae-0eb50cdda979-1/resource/Assets0Images09943c376-0ae0-4e27-8e47-25a6be6ef142.png?sv=2017-04-17&sr=b&sig=hN%2B57WHWfHZit3KGZZMqIraSZ79c9MumS8bPPrnp60Y%3D&spr=https&se=2022-07-27T03%3A55%3A25Z&sp=r",
+    "nex4 logo": "https://docserverpwaprodeas.blob.core.windows.net/5d462452-fa05-4b53-b2ae-0eb50cdda979-1/resource/Assets0Images072146d53-e2aa-4669-b27b-341e334257cd.png?sv=2017-04-17&sr=b&sig=67eTnZnNOZHwBSWdM4fhP9hZhIqS%2FRsFF7QhcEUexVo%3D&spr=https&se=2022-07-27T03%3A55%3A25Z&sp=r",
+    "nex4 signature": "https://docserverpwaprodeas.blob.core.windows.net/5d462452-fa05-4b53-b2ae-0eb50cdda979-1/resource/Assets0Images02ea81994-6b71-4a88-979b-166e27db8a3e.png?sv=2017-04-17&sr=b&sig=kbEuM%2B9caHeVvuh1m0cGQobC%2BJFiX%2BcgkiRFoVO%2BZJQ%3D&spr=https&se=2022-07-27T03%3A55%3A25Z&sp=r"
   },
   "OldLogoFileName": "tvynqh5c.jpg",
   "OrderComponentMetadata": {},
@@ -1462,7 +1462,7 @@
   "RuleScreenIdWithoutScreen": {},
   "TemplateVersions": {},
   "VolatileProperties": {
-    "AnalysisLoadTime": 3.4027173,
+    "AnalysisLoadTime": 4.9531783,
     "ControlCount": {
       "button": 70,
       "checkbox": 19,
@@ -1484,7 +1484,7 @@
       "text": 27,
       "typedDataCard": 41
     },
-    "DeserializationLoadTime": 3.9350614,
+    "DeserializationLoadTime": 8.8209531,
     "ErrorCount": 71
   },
   "WasLocalDatabaseReferencesEmpty": true
