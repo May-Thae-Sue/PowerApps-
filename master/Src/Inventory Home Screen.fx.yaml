@@ -594,6 +594,7 @@
 
                                     DataCardKey25 As label:
                                         AutoHeight: =true
+                                        FontWeight: =FontWeight.Semibold
                                         Height: =34
                                         Text: =Parent.DisplayName
                                         Width: =(Parent.Width - 60) * 0.4
@@ -603,16 +604,15 @@
                                         ZIndex: =1
 
                                     DataCardValue25 As label:
-                                        AutoHeight: =true
                                         DisplayMode: =Parent.DisplayMode
-                                        Height: =27
+                                        Height: =37
                                         PaddingLeft: =0
                                         PaddingRight: =0
                                         PaddingTop: =0
                                         Text: =Parent.Default
                                         Width: =(Parent.Width - 60) * 0.6
                                         X: =DataCardKey25.X + DataCardKey25.Width
-                                        Y: =10
+                                        Y: =4
                                         ZIndex: =2
 
                                 DataCard1_1 As typedDataCard.blankCard:
@@ -5205,7 +5205,7 @@
                             PaddingRight: =0
                             PaddingTop: =0
                             Size: =12
-                            Text: =ThisItem.Title
+                            Text: =ThisItem.'Contract No'
                             VerticalAlign: =VerticalAlign.Top
                             X: =Checkbox3.X + Checkbox3.Width
                             ZIndex: =1
@@ -5229,7 +5229,7 @@
                             PaddingRight: =0
                             PaddingTop: =0
                             Size: =12
-                            Text: =ThisItem.ContractNo
+                            Text: =ThisItem.'Vendor Name'
                             VerticalAlign: =VerticalAlign.Top
                             X: =300
                             ZIndex: =3
@@ -5550,12 +5550,136 @@
                     Y: =150
                     ZIndex: =42
 
-                Group5 As group:
+                Button4 As button:
+                    Color: =RGBA(0, 60, 106, 1)
+                    Fill: =RGBA(230, 230, 230, 1)
+                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                    OnSelect: =Reset(f1);Reset(f2); Reset(f3);Reset(f5);
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    Text: ="Reset"
+                    Width: =90
+                    X: =If(f2.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BViewName' = "By Contract" || f2.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BViewName' = "Shown As",920,705)
+                    Y: =146
+                    ZIndex: =43
+
+                f2 As dropdown:
+                    Height: =35
+                    Items: =colChoices
+                    OnChange: |-
+                        =Set(checkbox,false);
+                        Set(var,false);
+                        Clear(recordSelected);
+                    Width: =158
+                    X: =275
+                    Y: =151
+                    ZIndex: =44
+
+                Checkbox2 As checkbox:
+                    CheckboxSize: =20
+                    Height: =20
+                    OnCheck: |
+                        =Set(
+                            var,
+                            true
+                        );
+                        ClearCollect(
+                            recordSelected,
+                            Gallery7.AllItems.ID
+                        );
+                    OnUncheck: =Set(var,false);Clear(recordSelected);
+                    Text: =""
+                    Visible: =checkbox && !IsEmpty(recordSelected)
+                    Width: =20
+                    X: =13
+                    Y: =214
+                    ZIndex: =45
+
+                Button14 As button:
+                    Height: =35
+                    OnSelect: |-
+                        =    ForAll(Gallery7.AllItems,
+                            Collect(
+                                ExportDataAll,
+                             {
+                                 ExcelContractNo:ThisRecord.ContractNo,
+                                 ExcelCustomer: ThisRecord.Customer.Value,
+                                 ExccelVendor:ThisRecord.Title,
+                                 ExcelStartDate:ThisRecord.ServiceStartDate,
+                                 ExcelEndDate: ThisRecord.ServiceEndDate,
+                                 ExcelContactedEmail:ThisRecord.ContactedEmail,
+                                 ExcelComment:ThisRecord.Comment
+                             }
+                            ));
+                           Set(varLink,ExportCSV.Run(JSON(ExportDataAll,JSONFormat.IgnoreUnsupportedTypes)).filelink);
+                        Download(varLink);
+                           Clear(ExportDataAll);
+                           Set(varLink,"");
+                    Text: ="Export All"
+                    X: =1007
+                    Y: =9
+                    ZIndex: =47
+
+                Button14_1 As button:
+                    Height: =35
+                    OnSelect: |
+                        = ClearCollect(
+                                SendEmail,
+                             {
+                                 EmailContractNo:recordSelected.ContractNo,
+                                 EmailCustomer:customerNameforemail ,
+                                  EmailVendor:recordSelected.Title,
+                                 EmailStartDate:recordSelected.ServiceStartDate,
+                                  EmailEndDate: recordSelected.ServiceEndDate,
+                                EmailContactedEmail:recordSelected.ContactedEmail,
+                                 EmailComment:recordSelected.Comment,
+                                 NotiDay: DateDiff(Today(),recordSelected.ServiceEndDate,Days),
+                                 ContactedtoPartner: DateAdd(recordSelected.ServiceEndDate,-2,Months)
+                             }
+                            );
+                           SendEmail_1.Run(JSON(SendEmail,JSONFormat.IgnoreUnsupportedTypes));
+                           Clear(SendEmail);
+                    Text: ="Send Email"
+                    Visible: =If(CountRows(recordSelected)=1,true, false)
+                    Width: =159
+                    X: =421
+                    Y: =9
+                    ZIndex: =48
+
+                Button14_2 As button:
+                    Height: =35
+                    OnSelect: |
+                        =    ForAll(recordSelected,
+                            Collect(
+                                ExportDataSelected,
+                             {
+                                 ExcelContractNo:ThisRecord.ContractNo,
+                                ExcelCustomer: ThisRecord.Customer.Value,
+                                 ExcelVendor:ThisRecord.Title,
+                                ExcelStartDate:ThisRecord.ServiceStartDate,
+                                 ExcelEndDate: ThisRecord.ServiceEndDate,
+                                 ExcelContactedEmail:ThisRecord.ContactedEmail,
+                                 ExcelComment:ThisRecord.Comment
+                             }
+                            ));
+                           
+                           Set(varLink,ExportCSV.Run(JSON(ExportDataSelected,JSONFormat.IgnoreUnsupportedTypes)).filelink);
+                        Download(varLink);
+                           Clear(ExportDataSelected);
+                           Set(varLink,"");
+                    Text: ="Export Selelcted"
+                    Visible: =If(CountRows(recordSelected)>0,true, false)
+                    Width: =190
+                    X: =593
+                    Y: =9
+                    ZIndex: =49
+
+                "'Export Button Group' As group":
                     Height: =5
                     Width: =5
-                    X: =60
-                    Y: =60
-                    ZIndex: =42
+                    X: =40
+                    Y: =40
+                    ZIndex: =51
 
                     Rectangle3 As rectangle:
                         BorderColor: =RGBA(230, 230, 230, 1)
@@ -5641,134 +5765,57 @@
                                 false
                             );
                             
+                        Visible: =false
                         Width: =223
                         X: =935
                         Y: =11
                         ZIndex: =46
 
-                Button4 As button:
-                    Color: =RGBA(0, 60, 106, 1)
-                    Fill: =RGBA(230, 230, 230, 1)
-                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
-                    OnSelect: =Reset(f1);Reset(f2); Reset(f3);Reset(f5);
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    Text: ="Reset"
-                    Width: =90
-                    X: =If(f2.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BViewName' = "By Contract" || f2.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BViewName' = "Shown As",920,705)
-                    Y: =146
-                    ZIndex: =43
-
-                f2 As dropdown:
-                    Height: =35
-                    Items: =colChoices
-                    OnChange: |-
-                        =Set(checkbox,false);
-                        Set(var,false);
-                        Clear(recordSelected);
-                    Width: =158
-                    X: =275
-                    Y: =151
-                    ZIndex: =44
-
-                Checkbox2 As checkbox:
-                    CheckboxSize: =20
-                    Height: =20
-                    OnCheck: |
-                        =Set(
-                            var,
-                            true
-                        );
-                        ClearCollect(
-                            recordSelected,
-                            Gallery7.AllItems.ID
-                        );
-                    OnUncheck: =Set(var,false);Clear(recordSelected);
-                    Text: =""
-                    Visible: =checkbox && !IsEmpty(recordSelected)
-                    Width: =20
-                    X: =13
-                    Y: =214
-                    ZIndex: =45
-
-                Button14 As button:
-                    Height: =35
-                    OnSelect: |-
-                        =    ForAll(Gallery7.AllItems,
-                            Collect(
-                                ExportDataAll,
-                             {
-                                 ExcelContractNo:ThisRecord.ContractNo,
-                                 ExcelCustomer: ThisRecord.Customer.Value,
-                                 ExccelVendor:ThisRecord.Title,
-                                 ExcelStartDate:ThisRecord.ServiceStartDate,
-                                 ExcelEndDate: ThisRecord.ServiceEndDate,
-                                 ExcelContactedEmail:ThisRecord.ContactedEmail,
-                                 ExcelComment:ThisRecord.Comment
-                             }
-                            ));
-                           Set(varLink,ExportCSV.Run(JSON(ExportDataAll,JSONFormat.IgnoreUnsupportedTypes)).filelink);
-                        Download(varLink);
-                           Clear(ExportDataAll);
-                           Set(varLink,"");
-                    Text: ="Export All"
-                    X: =753
-                    Y: =11
-                    ZIndex: =47
-
-                Button14_1 As button:
-                    Height: =35
-                    OnSelect: |
-                        = ClearCollect(
-                                SendEmail,
-                             {
-                                 EmailContractNo:recordSelected.ContractNo,
-                                 EmailCustomer:customerNameforemail ,
-                                  EmailVendor:recordSelected.Title,
-                                 EmailStartDate:recordSelected.ServiceStartDate,
-                                  EmailEndDate: recordSelected.ServiceEndDate,
-                                EmailContactedEmail:recordSelected.ContactedEmail,
-                                 EmailComment:recordSelected.Comment,
-                                 NotiDay: DateDiff(Today(),recordSelected.ServiceEndDate,Days),
-                                 ContactedtoPartner: DateAdd(recordSelected.ServiceEndDate,-2,Months)
-                             }
+                    Button1 As button:
+                        Height: =35
+                        OnSelect: |+
+                            =If(
+                                checkbox = false && export_drp.Selected.Value = "Dynamics Export" ,
+                                ClearCollect(
+                                    contractID,
+                                    Gallery7.AllItems.ID
+                                );
+                                ClearCollect(ExportList,contractID.ID);
+                                Set(
+                                    Export_Box,
+                                    "On"
+                                );
+                                Set(
+                                    columncheckbox,
+                                    false
+                                );
+                                ,checkbox = true && export_drp.Selected.Value = "Dynamics Export",
+                                ClearCollect(
+                                    contractID,
+                                    recordSelected.ID
+                                );
+                                ClearCollect(ExportList,contractID.ID);
+                                Set(
+                                    Export_Box,
+                                    "On"
+                                );
+                                Set(
+                                    columncheckbox,
+                                    false
+                                );
+                                
                             );
-                           SendEmail_1.Run(JSON(SendEmail,JSONFormat.IgnoreUnsupportedTypes));
-                           Clear(SendEmail);
-                    Text: ="Send Email"
-                    Visible: =If(CountRows(recordSelected)=1,true, false)
-                    Width: =159
-                    X: =389
-                    Y: =12
-                    ZIndex: =48
-
-                Button14_2 As button:
-                    Height: =35
-                    OnSelect: |
-                        =    ForAll(recordSelected,
-                            Collect(
-                                ExportDataSelected,
-                             {
-                                 ExcelContractNo:ThisRecord.ContractNo,
-                                ExcelCustomer: ThisRecord.Customer.Value,
-                                 ExcelVendor:ThisRecord.Title,
-                                ExcelStartDate:ThisRecord.ServiceStartDate,
-                                 ExcelEndDate: ThisRecord.ServiceEndDate,
-                                 ExcelContactedEmail:ThisRecord.ContactedEmail,
-                                 ExcelComment:ThisRecord.Comment
-                             }
-                            ));
-                           
-                           Set(varLink,ExportCSV.Run(JSON(ExportDataSelected,JSONFormat.IgnoreUnsupportedTypes)).filelink);
-                        Download(varLink);
-                           Clear(ExportDataSelected);
-                           Set(varLink,"");
-                    Text: ="Export Selelcted"
-                    Visible: =If(CountRows(recordSelected)>0,true, false)
-                    Width: =190
-                    X: =555
-                    Y: =11
-                    ZIndex: =49
+                            
+                            Set(
+                                columncheckbox,
+                                false
+                            );
+                            
+                        Text: ="Dynamics Expot"
+                        Width: =191
+                        X: =801
+                        Y: =9
+                        ZIndex: =50
 
                 "'By Product Group_1' As group":
                     Height: =5
@@ -7133,6 +7180,9 @@
 
                 Button4_7 As button:
                     FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                    OnSelect: |+
+                        =ExportDatawithcustomizedColumns.Run(JSON(ExportList ,JSONFormat.IgnoreUnsupportedTypes));
+                        
                     RadiusBottomLeft: =0
                     RadiusBottomRight: =0
                     RadiusTopLeft: =0
@@ -7168,13 +7218,13 @@
                     ZIndex: =13
 
                 sn As checkbox:
-                    Default: =columncheckbox
+                    Default: =
                     OnCheck: |-
-                        =ClearCollect( ExportList,
+                        =Collect( ExportList,
                          AddColumns( contractID, "SerialNo", ID * 1 ));
                          ClearCollect(ColumnSelected, ExportList);
                     OnUncheck: |-
-                        =ClearCollect( ColumnSelected,
+                        =Collect( ColumnSelected,
                          DropColumns( ExportList, "SerialNo"));
                          ClearCollect(ExportList,ColumnSelected);
                     Text: ="Serial No"
@@ -7184,13 +7234,13 @@
                     ZIndex: =14
 
                 snremark As checkbox:
-                    Default: =columncheckbox
+                    Default: =
                     OnCheck: |-
-                        =ClearCollect( ExportList,
+                        =Collect( ExportList,
                          AddColumns( contractID, "Remark", ID * 1 ));
                          ClearCollect(ColumnSelected, ExportList);
                     OnUncheck: |-
-                        =ClearCollect( ColumnSelected,
+                        =Collect( ColumnSelected,
                          DropColumns( ExportList, "Remark"));
                          ClearCollect(ExportList,ColumnSelected);
                     Text: ="Remark"
@@ -7210,13 +7260,13 @@
                     ZIndex: =16
 
                 qt As checkbox:
-                    Default: =columncheckbox
+                    Default: =
                     OnCheck: |-
-                        =ClearCollect( ExportList,
+                        =Collect( ExportList,
                          AddColumns( contractID, "Qnty", ID * 1 ));
                          ClearCollect(ColumnSelected, ExportList);
                     OnUncheck: |-
-                        =ClearCollect( ColumnSelected,
+                        =Collect( ColumnSelected,
                          DropColumns( ExportList, "Qnty"));
                          ClearCollect(ExportList,ColumnSelected);
                     Text: ="Quantity"
@@ -7226,7 +7276,7 @@
                     ZIndex: =17
 
                 pm As checkbox:
-                    Default: =columncheckbox
+                    Default: =
                     Height: =45
                     OnCheck: |-
                         =ClearCollect( ExportList,
@@ -7244,7 +7294,7 @@
                     ZIndex: =18
 
                 spn As checkbox:
-                    Default: =columncheckbox
+                    Default: =
                     Height: =44
                     OnCheck: |-
                         =ClearCollect( ExportList,
@@ -7262,7 +7312,7 @@
                     ZIndex: =19
 
                 inv As checkbox:
-                    Default: =columncheckbox
+                    Default: =
                     OnCheck: |-
                         =ClearCollect( ExportList,
                          AddColumns( contractID, "INV", ID * 1 ));
@@ -7278,7 +7328,7 @@
                     ZIndex: =20
 
                 wp As checkbox:
-                    Default: =columncheckbox
+                    Default: =
                     Height: =39
                     OnCheck: |-
                         =ClearCollect( ExportList,
@@ -7296,7 +7346,7 @@
                     ZIndex: =21
 
                 cm As checkbox:
-                    Default: =columncheckbox
+                    Default: =
                     Height: =32
                     OnCheck: |-
                         =ClearCollect( ExportList,
@@ -7314,7 +7364,7 @@
                     ZIndex: =22
 
                 ce As checkbox:
-                    Default: =columncheckbox
+                    Default: =
                     OnCheck: |-
                         =ClearCollect( ExportList,
                          AddColumns( contractID, "ContractedEmail", ID * 1 ));
@@ -7331,7 +7381,7 @@
                     ZIndex: =23
 
                 ed As checkbox:
-                    Default: =columncheckbox
+                    Default: =
                     OnCheck: |-
                         =ClearCollect( ExportList,
                          AddColumns( contractID, "EndDate", ID * 1 ));
@@ -7348,7 +7398,7 @@
                     ZIndex: =24
 
                 sd As checkbox:
-                    Default: =columncheckbox
+                    Default: =
                     Height: =48
                     OnCheck: |-
                         =ClearCollect( ExportList,
@@ -7366,7 +7416,7 @@
                     ZIndex: =25
 
                 vn As checkbox:
-                    Default: =columncheckbox
+                    Default: =
                     Height: =48
                     OnCheck: |-
                         =ClearCollect( ExportList,
@@ -7384,7 +7434,7 @@
                     ZIndex: =26
 
                 cum As checkbox:
-                    Default: =columncheckbox
+                    Default: =
                     Height: =54
                     OnCheck: |-
                         =ClearCollect( ExportList,
@@ -7402,7 +7452,7 @@
                     ZIndex: =27
 
                 cn As checkbox:
-                    Default: =columncheckbox
+                    Default: =
                     OnCheck: |-
                         =ClearCollect( ExportList,
                          AddColumns( contractID, "Contract-No", ID * 1 ));
